@@ -13,5 +13,6 @@ jobs:
         run: |
           curl -H "Title: Push Detectado" \
                -H "Priority: high" \
-               -d "El usuario de GitHub ${{ github.actor }} ha realizado cambios al repositorio" \
+               -d "El usuario de GitHub ${{ github.actor }} ha realizado cambios al repositorio: https://github.com/justindff/practica-ic" \
                https://ntfy.sh/devops-itla
+

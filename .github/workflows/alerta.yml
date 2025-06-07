@@ -1,0 +1,17 @@
+name: Notificar cambios en main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -H "Title: Push Detectado" \
+               -H "Priority: high" \
+               -d "El usuario de GitHub ${{ github.actor }} ha realizado cambios al repositorio" \
+               https://ntfy.sh/devops-itla
